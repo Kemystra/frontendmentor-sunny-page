@@ -21,3 +21,7 @@ design/
 # Ignore FrontEndMentor.io files
 challenge-description.md
 style-guide.md
+
+# Ignore built CSS files and their intermediates
+style.css
+style.css.map
