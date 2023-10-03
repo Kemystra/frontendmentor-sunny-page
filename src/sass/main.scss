@@ -71,7 +71,8 @@ nav {
 	justify-content: flex-end;
 	align-items: center;
 
-	padding: 0px 2.2rem;
+	padding-left: 2.2rem;
+	padding-right: 1rem;
 
 	#logo {
 		justify-self: flex-start;
@@ -87,10 +88,11 @@ nav {
 		border-radius: 99999px;
 		border: none;
 
-		font-size: 1rem;
+		font-size: 0.9rem;
 		@include fancy-font;
 
-		padding: 1rem 1.5rem;
+		padding: 1.1rem 1.8rem;
+		margin: 0px 1.5rem;
 
 		background-color: $white;
 	}
