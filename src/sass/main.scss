@@ -19,7 +19,7 @@ $white: hsl(0, 0%, 100%);
 
 @mixin fancy-font {
 	font-family: "Fraunces", "sans-serif";
-	font-weight: 700;
+	font-weight: 900;
 }
 
 * {
@@ -56,8 +56,7 @@ body {
 h1 {
 	margin: 6.2rem 0px;
 
-	font-family: "Fraunces", "sans-serif";
-	font-weight: 900;
+	@include fancy-font;
 	font-size: 3.2rem;
 	letter-spacing: 0.5rem;
 	color: $white;
@@ -90,6 +89,7 @@ nav {
 
 		font-size: 0.9rem;
 		@include fancy-font;
+		font-weight: 700;
 
 		padding: 1.1rem 1.8rem;
 		margin: 0px 1.5rem;
@@ -98,4 +98,116 @@ nav {
 	}
 }
 
+#promote {
+	display: grid;
+	grid-template-columns: auto auto;
 
+	max-width: 100%;
+}
+
+.cta-part-pic > img {
+	width: 50vw;
+	height: 100%;
+}
+
+.cta-part-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	//padding: 8rem 5rem 0rem 9.5rem;
+
+	h2 {
+		margin-top: none;
+		margin-right: 1rem;
+		@include fancy-font;
+		font-weight: 900;
+		font-size: 2.4rem;
+		color: $dark-desaturated-blue;
+	}
+
+	p {
+		margin: 0;
+
+		@include body-copy();
+		color: $dark-grayish-blue;
+		line-height: 1.6rem;
+	}
+
+	a {
+		padding: 0px;
+		margin: 2rem 0.5rem;
+
+		@include fancy-font();
+		font-size: 1rem;
+
+		&::after {
+			content: '';
+			opacity: 20%;
+
+			display: block;
+			width: 110%;
+			height: 50%;
+			border-radius: 9999px;
+
+			z-index: -1;
+			position: relative;
+
+			// That centering hack
+			left: 50%;
+			transform: translate(-50%, -75%);
+		}
+
+		&:hover {
+			&::after { opacity: 100%; }
+		}
+	}
+}
+
+
+#transform-brand {
+	padding: 0rem 5rem 0rem 9.5rem;
+	a::after { background-color: $yellow; }
+}
+
+#stand-out {
+	padding: 0rem 9rem 0rem 6rem;
+	a::after { background-color: $soft-red; }
+}
+
+.services-part {
+	width: 50vw;
+	aspect-ratio: 6/5;
+
+	padding: 2.3rem 11rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+
+	text-align: center;
+	line-height: 1.6rem;
+
+	p {
+		color: $dark-desaturated-cyan;
+	}
+}
+
+.services-title {
+	@include fancy-font();
+	font-size: 1.6rem;
+	margin-bottom: 0.7rem;
+}
+
+.services-desc {
+	font-size: 1rem;
+}
+
+#graphic-design-part {
+	background-image: url("./images/desktop/image-graphic-design.jpg");
+}
+
+#photography-part {
+	background-image: url("./images/desktop/image-photography.jpg");
+}
