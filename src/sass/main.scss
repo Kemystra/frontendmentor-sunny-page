@@ -282,3 +282,18 @@ nav {
 		margin: 0;
 	}
 }
+
+#gallery {
+	width: 100vw;
+	height: 50vh;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 25vw;
+		height: auto;
+	}
+}
