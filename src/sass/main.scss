@@ -12,6 +12,9 @@ $dark-grayish-blue: hsl(232, 10%, 55%);
 $grayish-blue: hsl(210, 4%, 67%);
 $white: hsl(0, 0%, 100%);
 
+// Color that I somehow had to recover
+$footer-cyan: #90D4C5;
+
 @mixin body-copy {
 	font-family: "Barlow", "sans-serif";
 	font-size: 18px;
@@ -195,10 +198,6 @@ nav {
 
 	text-align: center;
 	line-height: 1.6rem;
-
-	p {
-		color: $dark-desaturated-cyan;
-	}
 }
 
 .services-title {
@@ -221,12 +220,13 @@ nav {
 
 #testimonials {
 	width: 100vw;
-	height: 90vh;
+	height: 98vh;
 
 	display: grid;
 	grid-template-rows: auto 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 3rem;
+	column-gap: 2.5rem;
+	row-gap: 2rem;
 
 	padding: 0px 7.5rem;
 	padding-top: 10rem;
@@ -247,7 +247,7 @@ nav {
 .person-card {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 
 	line-height: 2rem;
@@ -265,7 +265,7 @@ nav {
 		color: red;
 		font-size: 1.1rem;
 
-		margin-bottom: 5rem;
+		margin-bottom: 4.5rem;
 	}
 
 	p:nth-of-type(2) {
@@ -296,4 +296,25 @@ nav {
 		width: 25vw;
 		height: auto;
 	}
+}
+
+footer {
+	width: 100vw;
+	height: 50vh;
+
+	background-color: $footer-cyan;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	object {
+		color: $dark-moderate-cyan;
+	}
+}
+
+#attribution {
+	position: absolute;
+	bottom: 0;
 }
