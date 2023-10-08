@@ -216,10 +216,14 @@ nav {
 
 #graphic-design-part {
 	background-image: url("./images/desktop/image-graphic-design.jpg");
+
+	.services-title { color: $dark-desaturated-cyan }
 }
 
 #photography-part {
 	background-image: url("./images/desktop/image-photography.jpg");
+
+	.services-title { color: $dark-blue }
 }
 
 #testimonials {
