@@ -310,6 +310,9 @@ footer {
 	width: 100vw;
 	height: 50vh;
 
+	// Used for #attribution positioning
+	position: relative;
+
 	background-color: $footer-cyan;
 
 	display: flex;
