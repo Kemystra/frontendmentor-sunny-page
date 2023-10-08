@@ -42,6 +42,10 @@ body {
 	margin: 0;
 }
 
+.logo {
+	width: 10rem;
+}
+
 #landing-section {
 	height: 100vh;
 
@@ -76,7 +80,7 @@ nav {
 	padding-left: 2.2rem;
 	padding-right: 1rem;
 
-	#logo {
+	.logo {
 		justify-self: flex-start;
 		margin-right: auto;
 	}
@@ -306,13 +310,33 @@ footer {
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
 
-	object {
-		color: $dark-moderate-cyan;
+	#link-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		width: 18rem;
+
+		transform: translateY(-100%);
+		
+		a { color: $dark-moderate-cyan }
+	}
+
+	#social-media-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		width: 10rem;
 	}
 }
+
+
 
 #attribution {
 	position: absolute;

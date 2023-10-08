@@ -93,10 +93,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [CSS Tricks: How to Scale SVG](https://css-tricks.com/scale-svg/) - Helped me in finding ways to resizing SVGs, which is used in the site's logo.
+- [MDN Web Docs on CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Too much to list here but I just want to mention on the abundant methods to use justify-* with Flexbox.
 
 ## Author
 
