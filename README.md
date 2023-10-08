@@ -16,8 +16,6 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -94,6 +92,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [CSS Tricks: How to Scale SVG](https://css-tricks.com/scale-svg/) - Helped me in finding ways to resizing SVGs, which is used in the site's logo.
+-[CSS Tricks: Approaches to Media Queries in Sass](https://css-tricks.com/approaches-media-queries-sass/) - Really opened my eyes to the true power of SASS; I was just a casual @mixin user until now.
 - [MDN Web Docs on CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Too much to list here but I just want to mention on the abundant methods to use justify-* with Flexbox.
 
 ## Author
