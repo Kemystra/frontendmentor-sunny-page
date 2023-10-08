@@ -25,6 +25,13 @@ $footer-cyan: #90D4C5;
 	font-weight: 900;
 }
 
+@mixin flexbox($direction, $major-axis: center, $minor-axis: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $major-axis;
+	align-items: $minor-axis;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -52,10 +59,7 @@ body {
 	background-image: url("images/desktop/image-header.jpg");
 	background-size: cover;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+	@include flexbox(column, flex-start);
 
 	padding-top: 2rem;
 }
@@ -72,10 +76,7 @@ h1 {
 nav {
 	width: 100%;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
+	@include flexbox(row, flex-end);
 
 	padding-left: 2.2rem;
 	padding-right: 1rem;
@@ -126,10 +127,7 @@ nav {
 }
 
 .cta-part-text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
+	@include flexbox(column, center, flex-start);
 	//padding: 8rem 5rem 0rem 9.5rem;
 
 	h2 {
@@ -197,10 +195,7 @@ nav {
 
 	padding: 2.3rem 11.5rem;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
+	@include flexbox(column, flex-end);
 
 	text-align: center;
 	line-height: 1.6rem;
@@ -257,10 +252,7 @@ nav {
 }
 
 .person-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+	@include flexbox(column, flex-start);
 
 	line-height: 2rem;
 	text-align: center;
@@ -299,10 +291,7 @@ nav {
 	width: 100vw;
 	height: 50vh;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	@include flexbox(row);
 
 	img {
 		width: 25vw;
@@ -319,16 +308,10 @@ footer {
 
 	background-color: $footer-cyan;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
+	@include flexbox(column, space-evenly);
 
 	#link-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+		@include flexbox(row, space-between);
 
 		width: 18rem;
 
@@ -338,10 +321,7 @@ footer {
 	}
 
 	#social-media-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+		@include flexbox(row, space-between);
 
 		width: 10rem;
 	}
