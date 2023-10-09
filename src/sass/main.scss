@@ -55,13 +55,32 @@ body {
 
 #landing-section {
 	height: 100vh;
+	padding-top: 2rem;
+
+	position: relative;
 
 	background-image: url("images/desktop/image-header.jpg");
 	background-size: cover;
 
 	@include flexbox(column, flex-start);
 
-	padding-top: 2rem;
+	.logo {
+		position: absolute;
+		left: 2.3rem;
+	}
+}
+
+#mobile-menu-button {
+	background-image: url("./images/icon-hamburger.svg");
+	background-size: cover;
+	background-color: transparent;
+
+	width: 2rem;
+	height: 2rem;
+
+	border: none;
+
+	display: none;
 }
 
 h1 {
@@ -81,10 +100,6 @@ nav {
 	padding-left: 2.2rem;
 	padding-right: 1rem;
 
-	.logo {
-		justify-self: flex-start;
-		margin-right: auto;
-	}
 
 	a {
 		margin: 0px 1.5rem;
@@ -112,10 +127,6 @@ nav {
 			color: $white;
 		}
 	}
-}
-
-#mobile-header {
-	display: none;
 }
 
 #promote {
@@ -344,26 +355,11 @@ footer {
 		height: auto;
 
 		background-image: url("images/mobile/image-header.jpg");
-		background-size: contain;
+		background-size: cover;
 		background-repeat: no-repeat;
 
 		nav {
 			display: none;
-		}
-	}
-
-	#mobile-header {
-		display: block;
-
-		button {
-			background-image: url("./images/icon-hamburger.svg");
-			background-size: cover;
-			background-color: transparent;
-
-			width: 2rem;
-			height: 2rem;
-
-			border: none;
 		}
 	}
 
