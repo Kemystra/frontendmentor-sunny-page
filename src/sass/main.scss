@@ -114,6 +114,10 @@ nav {
 	}
 }
 
+#mobile-header {
+	display: none;
+}
+
 #promote {
 	display: grid;
 	grid-template-columns: auto auto;
@@ -332,4 +336,42 @@ footer {
 #attribution {
 	position: absolute;
 	bottom: 0;
+}
+
+
+@media (max-width: 375px) {
+	#landing-section {
+		height: auto;
+
+		background-image: url("images/mobile/image-header.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		nav {
+			display: none;
+		}
+	}
+
+	#mobile-header {
+		display: block;
+
+		button {
+			background-image: url("./images/icon-hamburger.svg");
+			background-size: cover;
+			background-color: transparent;
+
+			width: 2rem;
+			height: 2rem;
+
+			border: none;
+		}
+	}
+
+	#graphic-design-part {
+		background-image: url("./images/mobile/image-graphic-design.jpg");
+	}
+
+	#photography-part {
+		background-image: url("./images/mobile/image-photography.jpg");
+	}
 }
