@@ -71,18 +71,6 @@ body {
 }
 
 #mobile-menu-button {
-	background-image: url("./images/icon-hamburger.svg");
-	background-size: cover;
-	background-color: transparent;
-
-	width: 1.5rem;
-	height: 1.5rem;
-
-	position: absolute;
-	right: 2rem;
-
-	border: none;
-
 	display: none;
 }
 
@@ -91,7 +79,9 @@ h1 {
 
 	@include fancy-font;
 	font-size: 3.2rem;
+	text-align: center;
 	letter-spacing: 0.5rem;
+
 	color: $white;
 }
 
@@ -137,6 +127,13 @@ nav {
 	grid-template-columns: auto auto;
 
 	max-width: 100%;
+
+	--transform-brand-text-order: 1;
+	--transform-brand-image-order: 2;
+	--standout-image-order: 3;
+	--standout-text-order: 4;
+	--graphic-design-order: 5;
+	--photo-order: 6;
 }
 
 .cta-part-pic > img {
@@ -355,23 +352,37 @@ footer {
 
 @media (max-width: 375px) {
 	#landing-section {
-		height: auto;
-
 		background-image: url("images/mobile/image-header.jpg");
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 
-		nav {
-			display: none;
+		.logo {
+			width: 7.5rem;
 		}
 	}
 
 	#mobile-menu-button {
+		background-image: url("./images/icon-hamburger.svg");
+		background-size: cover;
+		background-color: transparent;
+
+		width: 1.4rem;
+		height: 1.2rem;
+
+		position: absolute;
+		right: 2rem;
+
+		border: none;
 		display: block;
 	}
 
 	nav {
 		display: none;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		margin-bottom: 4.3rem;
 	}
 
 	.show-menu {
@@ -388,6 +399,10 @@ footer {
 		background-color: $white;
 
 		a { color: black }
+	}
+
+	#promote {
+		@include flexbox(column);
 	}
 
 	#graphic-design-part {
