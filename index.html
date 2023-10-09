@@ -124,5 +124,17 @@
 			Coded by <a href="#">Your Name Here</a>.
 		</div>
 		</footer>
+		<script>
+			let menuButton = document.getElementById("mobile-menu-button");
+			let menu = document.getElementsByTagName("nav")[0]; // Only one nav tag
+
+			menuButton.onfocus = () => {
+				menu.classList.add("show-menu");
+			}
+
+			menuButton.onblur = () => {
+				menu.classList.remove("show-menu");
+			}
+		</script>
 	</body>
 </html>
