@@ -122,18 +122,30 @@ nav {
 	}
 }
 
+$element-orders: (
+	--transform-brand-text-order: 1,
+	--transform-brand-image-order: 2,
+	--standout-image-order: 3,
+	--standout-text-order: 4,
+	--graphic-design-order: 5,
+	--photo-order: 6
+);
+
 #promote {
 	display: grid;
 	grid-template-columns: auto auto;
 
 	max-width: 100%;
 
-	--transform-brand-text-order: 1;
-	--transform-brand-image-order: 2;
-	--standout-image-order: 3;
-	--standout-text-order: 4;
-	--graphic-design-order: 5;
-	--photo-order: 6;
+	$i: 0;
+	@each $varname, $order in $element-orders {
+		#{$varname}: $order;
+		$i: $i + 1;
+
+		& :nth-child(#{$i}) {
+			order: var(#{$varname});
+		}	
+	}
 }
 
 .cta-part-pic > img {
@@ -403,6 +415,9 @@ footer {
 
 	#promote {
 		@include flexbox(column);
+
+		--transform-brand-text-order: 2;
+		--transform-brand-image-order: 1;
 	}
 
 	#graphic-design-part {
