@@ -32,6 +32,11 @@ $footer-cyan: #90D4C5;
 	align-items: $minor-axis;
 }
 
+// CSS black magic
+@mixin grid-minmax-cols($min-size, $min-col, $max-col) {
+	grid-template-columns: repeat(auto-fit, minmax(min(100%/$min-col, max($min-size, 100%/$max-col)), 1fr));
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -133,7 +138,7 @@ $element-orders: (
 
 #promote {
 	display: grid;
-	grid-template-columns: auto auto;
+	@include grid-minmax-cols(500px,1,2);
 
 	max-width: 100%;
 
@@ -416,7 +421,6 @@ footer {
 	}
 
 	#promote {
-		@include flexbox(column);
 		text-align: center;
 
 		--transform-brand-text-order: 2;
