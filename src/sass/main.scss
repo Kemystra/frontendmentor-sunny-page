@@ -261,7 +261,7 @@ $element-orders: (
 
 	display: grid;
 	grid-template-rows: auto 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr);
 	column-gap: 3rem;
 	row-gap: 2rem;
 
@@ -460,5 +460,19 @@ footer {
 	#photography-part {
 		padding: 0;
 		background-image: url("./images/mobile/image-photography.jpg");
+	}
+
+	#testimonials {
+		@include flexbox(column, center, center);
+
+		height: auto;
+		padding: 4rem 1.5rem;
+
+		h2 { letter-spacing: 0.2rem; }
+	}
+
+	.person-card {
+		p:nth-of-type(1) { margin: 0 }
+		p:nth-of-type(2) { margin-top: 1rem; }
 	}
 }
