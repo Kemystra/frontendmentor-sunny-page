@@ -34,6 +34,7 @@ $footer-cyan: #90D4C5;
 
 // CSS black magic
 @mixin grid-minmax-cols($min-size, $min-col, $max-col) {
+	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(100%/$min-col, max($min-size, 100%/$max-col)), 1fr));
 }
 
@@ -44,6 +45,15 @@ $footer-cyan: #90D4C5;
 p, a {
 	@include body-copy;
 	text-decoration: none;
+}
+
+picture > source {
+	// Necessary to set its dimensions
+	display: block;
+
+	width: 0;
+	height: 0;
+	margin: 0;
 }
 
 html {
@@ -137,8 +147,7 @@ $element-orders: (
 );
 
 #promote {
-	display: grid;
-	@include grid-minmax-cols(500px,1,2);
+	@include grid-minmax-cols(300px,1,2);
 
 	max-width: 100%;
 
@@ -319,14 +328,18 @@ $element-orders: (
 }
 
 #gallery {
-	width: 100vw;
+	width: 100%;
 	height: 50vh;
 
 	@include flexbox(row);
 
 	img {
-		width: 25vw;
+		width: 100%;
 		height: auto;
+
+		// <img> naturally have display: inline-block;
+		// This causes a small gap at the bottom
+		display: block;
 	}
 }
 
@@ -474,5 +487,16 @@ footer {
 	.person-card {
 		p:nth-of-type(1) { margin: 0 }
 		p:nth-of-type(2) { margin-top: 1rem; }
+	}
+
+	#gallery {
+		height: 100vw;
+		aspect-ratio: 1/1;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		align-items: stretch;
+		justify-content: stretch;
 	}
 }
