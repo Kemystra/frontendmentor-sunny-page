@@ -1,0 +1,125 @@
+@use 'globals' as *;
+
+#landing-section {
+	height: 100vh;
+	padding-top: 2rem;
+
+	position: relative;
+
+	background-image: url("images/desktop/image-header.jpg");
+	background-size: cover;
+
+	@include flexbox(column, flex-start);
+
+	.logo {
+		position: absolute;
+		left: 2.3rem;
+	}
+}
+
+#mobile-menu-button {
+	display: none;
+}
+
+h1 {
+	margin: 6.2rem 0px;
+
+	@include fancy-font;
+	font-size: 3.2rem;
+	text-align: center;
+	letter-spacing: 0.5rem;
+
+	color: $white;
+}
+
+nav {
+	width: 100%;
+
+	@include flexbox(row, flex-end);
+
+	padding-left: 2.2rem;
+	padding-right: 1rem;
+
+
+	a {
+		margin: 0px 1.5rem;
+		color: $white;
+	}
+
+	button {
+		border-radius: 99999px;
+		border: none;
+
+		font-size: 0.9rem;
+		@include fancy-font;
+		font-weight: 700;
+
+		padding: 1.1rem 1.8rem;
+		margin: 0px 1.5rem;
+
+		background-color: $white;
+		color: $dark-desaturated-blue;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(255,255,255,25%);
+			color: $white;
+		}
+	}
+}
+
+
+@media (max-width: 375px) {
+	#landing-section {
+		background-image: url("images/mobile/image-header.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		height: auto;
+		aspect-ratio: 375/538;
+
+		.logo {
+			width: 7.5rem;
+		}
+	}
+
+	#mobile-menu-button {
+		background-image: url("./images/icon-hamburger.svg");
+		background-size: cover;
+		background-color: transparent;
+
+		width: 1.4rem;
+		height: 1.2rem;
+
+		position: absolute;
+		right: 2rem;
+
+		border: none;
+		display: block;
+	}
+
+	nav {
+		display: none;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		margin-bottom: 4.3rem;
+	}
+
+	.show-menu {
+		position: absolute;
+		top: 2rem;
+
+		width: 8rem;
+		height: 8rem;
+		padding: 0;
+
+		@include flexbox(column);
+
+		background-color: $white;
+
+		a { color: black }
+	}
+}

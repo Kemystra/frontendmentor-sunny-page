@@ -1,0 +1,173 @@
+@use 'globals' as *;
+
+$element-orders: (
+	--transform-brand-text-order: 1,
+	--transform-brand-image-order: 2,
+	--standout-image-order: 3,
+	--standout-text-order: 4,
+	--graphic-design-order: 5,
+	--photo-order: 6
+);
+
+#promote {
+	@include grid-minmax-cols(300px,1,2);
+
+	max-width: 100%;
+
+	$i: 0;
+	@each $varname, $order in $element-orders {
+		#{$varname}: $order;
+		$i: $i + 1;
+
+		& > :nth-child(#{$i}) {
+			order: var(#{$varname});
+		}	
+	}
+}
+
+.cta-part-pic > img {
+	width: 50vw;
+	height: 100%;
+}
+
+.cta-part-text {
+	@include flexbox(column, center, flex-start);
+	//padding: 8rem 5rem 0rem 9.5rem;
+
+	h2 {
+		@include fancy-font;
+		font-weight: 900;
+		font-size: 2.4rem;
+		color: $dark-desaturated-blue;
+	}
+
+	p {
+		margin: 0;
+
+		@include body-copy();
+		color: $dark-grayish-blue;
+		line-height: 1.6rem;
+	}
+
+	a {
+		padding: 0px;
+		margin: 2rem 0.5rem;
+
+		@include fancy-font();
+		font-size: 1rem;
+
+		color: $dark-desaturated-blue;
+
+		&::after {
+			content: '';
+			opacity: 20%;
+
+			display: block;
+
+			width: 110%;
+			height: 0.5rem;
+			border-radius: 9999px;
+
+			z-index: -1;
+
+			position: relative;
+			// That centering hack
+			left: 50%;
+			transform: translate(-50%, -75%);
+		}
+
+		&:hover {
+			&::after { opacity: 100%; }
+		}
+	}
+}
+
+
+#transform-brand {
+	padding: 0rem 7.6rem 0rem 9.5rem;
+	a::after { background-color: $yellow; }
+}
+
+#stand-out {
+	padding: 0rem 11rem 0rem 6rem;
+	a::after { background-color: $soft-red; }
+}
+
+.services-part {
+	width: 50vw;
+	aspect-ratio: 6/5;
+	padding: 2.3rem 11.5rem;
+
+	@include flexbox(column, flex-end);
+
+	text-align: center;
+	line-height: 1.6rem;
+}
+
+.services-title {
+	@include fancy-font();
+	font-size: 1.6rem;
+	margin-bottom: 0.7rem;
+}
+
+.services-desc {
+	font-size: 1rem;
+	color: $extra-dark-grayish-blue;
+}
+
+#graphic-design-part {
+	background-image: url("./images/desktop/image-graphic-design.jpg");
+
+	p { color: $dark-desaturated-cyan }
+}
+
+#photography-part {
+	background-image: url("./images/desktop/image-photography.jpg");
+
+	p { color: $dark-blue }
+}
+
+
+@media (max-width: 375px) {
+	#promote {
+		text-align: center;
+
+		--transform-brand-text-order: 2;
+		--transform-brand-image-order: 1;
+
+		.cta-part-text {
+			height: fit-content;
+			padding: 2rem 1.5rem;
+
+			align-items: center;
+
+			p { line-height: 1.9rem; }
+			h2 { font-size: 2rem; }
+		}
+
+		.cta-part-pic > img {
+				width: 100%;
+		}
+
+		.services-part {
+			width: 100%;
+			aspect-ratio: 5/8;
+			padding: 2.7rem 1.2rem;
+
+			background-size: contain;
+		}
+
+		.services-title {
+			font-size: 1.8rem;
+		}
+	}
+
+	#graphic-design-part {
+		background-image: url("./images/mobile/image-graphic-design.jpg");
+	}
+
+	#photography-part {
+		padding: 0;
+		background-image: url("./images/mobile/image-photography.jpg");
+	}
+}

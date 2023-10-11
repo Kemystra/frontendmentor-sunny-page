@@ -1,0 +1,37 @@
+@use 'globals' as *;
+
+footer {
+	width: 100vw;
+	height: 50vh;
+
+	// Used for #attribution positioning
+	position: relative;
+
+	background-color: $footer-cyan;
+
+	@include flexbox(column, space-evenly);
+
+	.logo {
+		opacity: 80%;
+	}
+
+	#link-container {
+		@include flexbox(row, space-between);
+
+		width: 18rem;
+		transform: translateY(-100%);
+		
+		a { color: $dark-moderate-cyan }
+	}
+
+	#social-media-container {
+		@include flexbox(row, space-between);
+
+		width: 10rem;
+	}
+}
+
+#attribution {
+	position: absolute;
+	bottom: 0;
+}

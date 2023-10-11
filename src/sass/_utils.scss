@@ -1,0 +1,22 @@
+@mixin body-copy {
+	font-family: "Barlow", "sans-serif";
+	font-size: 18px;
+}
+
+@mixin fancy-font {
+	font-family: "Fraunces", "sans-serif";
+	font-weight: 900;
+}
+
+@mixin flexbox($direction, $major-axis: center, $minor-axis: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $major-axis;
+	align-items: $minor-axis;
+}
+
+// CSS black magic
+@mixin grid-minmax-cols($min-size, $min-col, $max-col) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%/$min-col, max($min-size, 100%/$max-col)), 1fr));
+}
