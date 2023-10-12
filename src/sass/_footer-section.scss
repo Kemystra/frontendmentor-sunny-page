@@ -2,7 +2,7 @@
 
 footer {
 	width: 100vw;
-	height: 50vh;
+	height: clamp(150px, 50vh, 350px);
 
 	// Used for #attribution positioning
 	position: relative;
