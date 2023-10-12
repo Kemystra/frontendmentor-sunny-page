@@ -10,9 +10,9 @@ $element-orders: (
 );
 
 #promote {
-	@include grid-minmax-cols(300px,1,2);
-
-	max-width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 100%;
 
 	$i: 0;
 	@each $varname, $order in $element-orders {
@@ -27,17 +27,19 @@ $element-orders: (
 
 .cta-part-pic > img {
 	width: 50vw;
-	height: 100%;
+	aspect-ratio: 6/5;
 }
 
 .cta-part-text {
 	@include flexbox(column, center, flex-start);
+	width: 100%;
+	aspect-ratio: 6/5;
 	//padding: 8rem 5rem 0rem 9.5rem;
 
 	h2 {
 		@include fancy-font;
 		font-weight: 900;
-		font-size: 2.4rem;
+		font-size: 250%;
 		color: $dark-desaturated-blue;
 	}
 
@@ -51,7 +53,7 @@ $element-orders: (
 
 	a {
 		padding: 0px;
-		margin: 2rem 0.5rem;
+		margin: 8% 0.5%;
 
 		@include fancy-font();
 		font-size: 1rem;
@@ -84,24 +86,26 @@ $element-orders: (
 
 
 #transform-brand {
-	padding: 0rem 7.6rem 0rem 9.5rem;
+	padding: 0% 14.5% 0% 20%;
 	a::after { background-color: $yellow; }
 }
 
 #stand-out {
-	padding: 0rem 11rem 0rem 6rem;
+	padding: 0% 20% 0% 14.5%;
 	a::after { background-color: $soft-red; }
 }
 
 .services-part {
 	width: 50vw;
 	aspect-ratio: 6/5;
-	padding: 2.3rem 11.5rem;
+	padding: 6% 25%;
 
 	@include flexbox(column, flex-end);
 
 	text-align: center;
 	line-height: 1.6rem;
+
+	background-size: cover;
 }
 
 .services-title {
@@ -112,7 +116,6 @@ $element-orders: (
 
 .services-desc {
 	font-size: 1rem;
-	color: $extra-dark-grayish-blue;
 }
 
 #graphic-design-part {
@@ -127,9 +130,55 @@ $element-orders: (
 	p { color: $dark-blue }
 }
 
-
-@media (max-width: 375px) {
+@media (max-width: 1000px) and (min-width: 571px) {
 	#promote {
+		--transform-brand-text-order: 3;
+		--transform-brand-image-order: 1;
+		--standout-image-order: 2;
+	}
+
+	.cta-part-text {
+		justify-content: space-around;
+		height: auto;
+	}
+
+	.services-part {
+		position: relative;
+		justify-content: space-evenly;
+
+		&::after {
+			content: "";
+
+			display: block;
+			height: 100%;
+			width: 100%;
+
+			position: absolute;
+			top: 0;
+
+			background-color: white;
+			opacity: 40%;
+		}
+
+		&>p { z-index: 1; }
+	}
+}
+
+@media (max-width: 800px) and (min-width: 571px) {
+	#promote {
+		.services-part {
+			padding: 1rem;
+		}
+
+		.cta-part-text {
+			padding: 1rem;
+		}
+	}
+}
+
+@media (max-width: 570px) {
+	#promote {
+		@include flexbox(column);
 		text-align: center;
 
 		--transform-brand-text-order: 2;

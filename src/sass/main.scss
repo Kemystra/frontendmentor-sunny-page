@@ -15,12 +15,16 @@ p, a {
 	text-decoration: none;
 }
 
-picture > source {
-	// Necessary to set its dimensions
-	display: block;
+picture {
+	source {
+		// Necessary to set its dimensions
+		display: block;
 
-	width: 0;
-	height: 0;
+		width: 0;
+		height: 0;
+	}
+
+	img { display: block; }
 }
 
 html {

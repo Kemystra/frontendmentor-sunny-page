@@ -18,7 +18,6 @@
 
 @media (max-width: 450px) {
 	#gallery {
-
 		aspect-ratio: 1/1;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -26,8 +25,4 @@
 		align-items: stretch;
 		justify-content: stretch;
 	}
-}
-
-@media (max-aspect-ratio: 87/53) {
-	
 }
