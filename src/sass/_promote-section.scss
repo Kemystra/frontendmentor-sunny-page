@@ -146,6 +146,8 @@ $element-orders: (
 		position: relative;
 		justify-content: space-evenly;
 
+		/* Add contrast to background when 
+		text go over the darker part of the image */
 		&::after {
 			content: "";
 
