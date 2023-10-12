@@ -1,8 +1,10 @@
 @use 'globals' as *;
 
 #landing-section {
-	height: 100vh;
+	//height: 100vh;
+	width: 100%;
 	padding-top: 2rem;
+	aspect-ratio: 16/9;
 
 	position: relative;
 
@@ -14,6 +16,7 @@
 	.logo {
 		position: absolute;
 		left: 2.3rem;
+		top: 2.8rem;
 	}
 }
 
@@ -25,7 +28,7 @@ h1 {
 	margin: 6.2rem 0px;
 
 	@include fancy-font;
-	font-size: 3.2rem;
+	font-size: clamp(2.5rem, 4vw, 5rem);
 	text-align: center;
 	letter-spacing: 0.5rem;
 
@@ -69,21 +72,7 @@ nav {
 	}
 }
 
-
-@media (max-width: 375px) {
-	#landing-section {
-		background-image: url("images/mobile/image-header.jpg");
-		background-size: contain;
-		background-repeat: no-repeat;
-
-		height: auto;
-		aspect-ratio: 375/538;
-
-		.logo {
-			width: 7.5rem;
-		}
-	}
-
+@media (max-width: 720px) {
 	#mobile-menu-button {
 		background-image: url("./images/icon-hamburger.svg");
 		background-size: cover;
@@ -103,11 +92,6 @@ nav {
 		display: none;
 	}
 
-	h1 {
-		font-size: 2.2rem;
-		margin-bottom: 4.3rem;
-	}
-
 	.show-menu {
 		position: absolute;
 		top: 2rem;
@@ -121,5 +105,32 @@ nav {
 		background-color: $white;
 
 		a { color: black }
+	}
+}
+
+@media (max-width: 600px) and (min-width: 400px) {
+	h1 {
+		font-size: 5rem;
+		padding: 0 10rem;
+	}
+}
+
+@media (max-width: 600px) {
+	#landing-section {
+		background-image: url("images/mobile/image-header.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		height: auto;
+		aspect-ratio: 375/538;
+
+		.logo {
+			width: 7.5rem;
+		}
+	}
+
+	h1 {
+		font-size: 2.2rem;
+		margin-bottom: 4.3rem;
 	}
 }
