@@ -61,6 +61,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 1. CSS Orders
 I can specify which order an element should be in a flexbox!
+
 ```css
 #first-div {
     order: 2;
@@ -80,6 +81,58 @@ Can be used to crop pictures into desired shapes.
     clip-path: circle(50% at 50% 50%)
 }
 ```
+
+3. SCSS @each
+Very useful to write repetitive CSS!
+```scss
+// Specify order of children of #promote in its grid.
+$element-orders: (
+	--transform-brand-text-order: 1,
+	--transform-brand-image-order: 2,
+	--standout-image-order: 3,
+	--standout-text-order: 4,
+	--graphic-design-order: 5,
+	--photo-order: 6
+);
+
+#promote {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+	$i: 0;
+	@each $varname, $order in $element-orders {
+		#{$varname}: $order;
+		$i: $i + 1;
+
+		& > :nth-child(#{$i}) {
+			order: var(#{$varname});
+		}	
+	}
+}
+```
+
+4. SCSS Imports
+Used it to separate files. Really nice, considering that I was working with a single file with 500+ LOC CSS for this challenge. I spent some time refactoring it after realizing this feature, and it was definitely worth it!
+```scss
+// Import the file '_test.scss'
+@use 'test';
+
+// This one imports, but also forwards it.
+// The file that will use this file will also be able to use that file.
+@forward 'file_that_the_main_file_also_needs';
+```
+
+5. Default \<img\> `display` value
+It turns out by default, \<img\> have `display: inline-block`, which causes a small gap underneath the image. Its super annoying, and next time I will just do:
+```css
+// Place this first!
+img {
+    diplay: block;
+}
+```
+
+6. \<a\> behaviour without `href` attribute.
+The tag will only show the pointer cursor when `href` attribute is present (even if it's empty). Wasted quite a bit of time wondering why the cursor won't change when hovering over an \<a\> tag.
 
 ### Continued development
 
