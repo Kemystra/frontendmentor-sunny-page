@@ -1,0 +1,22 @@
+{
+  "name": "sunnyside-agency-landing-page",
+  "version": "1.0.0",
+  "description": "Website solution to Sunnyside Agency Landing page challenge on FrontEndMentor.io",
+  "main": "-",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kemystra/frontendmentor-sunny-page.git"
+  },
+  "keywords": [
+    "front-end"
+  ],
+  "author": "Izzminhal Akmal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kemystra/frontendmentor-sunny-page/issues"
+  },
+  "homepage": "https://github.com/Kemystra/frontendmentor-sunny-page#readme"
+}
