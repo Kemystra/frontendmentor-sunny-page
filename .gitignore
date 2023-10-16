@@ -25,3 +25,7 @@ style-guide.md
 # Ignore built CSS files and their intermediates
 style.css
 style.css.map
+
+# Ignore npm package files
+/node_modules
+package-lock.json
