@@ -122,9 +122,9 @@ The tag will only show the pointer cursor when `href` attribute is present (even
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+For future challenges, I want to spend more time on accessibility; not just with semantic HTML, but with advanced features like ARIA labels and such.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'm also intrigued to work on challenges that play with dark and light theme switching. Really wanted to use more CSS & SCSS tricks later.
 
 ### Useful resources
 
